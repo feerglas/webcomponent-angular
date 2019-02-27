@@ -2,9 +2,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  templateUrl: './app.component.html'
 })
+
 export class AppComponent {
-  title = 'webcomp-angular';
+
+  date = '1970-03-10T00:00:00.000Z';
+
+  changeDate() {
+    const date = new Date();
+    this.date = date.toString();
+  }
 }

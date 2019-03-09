@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,17 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
 
-  date = '1970-03-10T00:00:00.000Z';
+  constructor(private elementRef:ElementRef) {}
 
-  changeDate() {
-    const date = new Date();
-    this.date = date.toString();
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.querySelector('sbb-footer').addEventListener('sbb-footer.language_switch', this.changeLanguage.bind(this));
   }
+
+  language = 'de';
+
+  changeLanguage(event) {
+    this.language = event.detail.language;
+    window.scrollTo(0, 0);
+  }
+
 }

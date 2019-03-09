@@ -3,12 +3,10 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DatetimeComponent } from './datetime/datetime.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DatetimeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

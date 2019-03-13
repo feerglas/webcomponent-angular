@@ -47,7 +47,6 @@ export class AppComponent {
 				this.results = res.data.trips;
 				this.titleFrom = from.label;
 				this.titleTo = to.label;
-				console.log(this.results);
 			})
 			.catch((err) => {
 				console.log('Error requesting Trips: ', err);

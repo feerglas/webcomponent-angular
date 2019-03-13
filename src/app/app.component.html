@@ -5,7 +5,7 @@
 
 <timetable-search (onSearchUpdate)='searchCallback($event[0], $event[1])'></timetable-search>
 
-<sbb-timetable-results-title></sbb-timetable-results-title>
+<sbb-timetable-results-title [from]='titleFrom' [to]='titleFrom'></sbb-timetable-results-title>
 
 <timetable-results [results]='results'></timetable-results>
 

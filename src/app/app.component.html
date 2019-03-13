@@ -1,8 +1,14 @@
 <sbb-global-styles></sbb-global-styles>
 <sbb-webfonts></sbb-webfonts>
 <sbb-header language='{{language}}' items='{"de": [{ "title": "Fahrplan", "link": "#"}, { "title": "Abos & Billete", "link": "#"}, { "title": "Bahnhof & Services", "link": "#"}, { "title": "Geschäftskunden", "link": "#"}, { "title": "Freizeit & Ferien", "link": "#"}], "fr": [{ "title": "Horaire", "link": "#"}, { "title": "Abonnements et billets", "link": "#"}, { "title": "Gare et servicesa", "link": "#"}, { "title": "Clientèle commerciale", "link": "#"}, { "title": "Loisirs et vacances", "link": "#"}], "en": [{ "title": "Timetable", "link": "#"}, { "title": "Travelcards & tickets", "link": "#"}, { "title": "Station & services", "link": "#"}, { "title": "Business customers", "link": "#"}, { "title": "Leisure & holidays", "link": "#"}], "it": [{ "title": "Orario", "link": "#"}, { "title": "Abonamenti e biglietti", "link": "#"}, { "title": "Stazione e servizi", "link": "#"}, { "title": "Clientela aziendale", "link": "#"}, { "title": "Tempo libero e vacanze", "link": "#"}]}'></sbb-header>
-<sbb-timetable-search></sbb-timetable-search>
-<sbb-timetable-results></sbb-timetable-results>
+<sbb-pagetitle additional-classes='var_centered' visuallyhidden='true' page-title='Startseite sbb.ch'></sbb-pagetitle>
+
+<timetable-search (onSearchUpdate)='searchCallback($event[0], $event[1])'></timetable-search>
+
+<sbb-timetable-results-title></sbb-timetable-results-title>
+
+<timetable-results [results]='results'></timetable-results>
+
 <sbb-homepage-main-teaser></sbb-homepage-main-teaser>
 
 <sbb-heading text='Rund um die SBB.' level='2'></sbb-heading>
@@ -13,4 +19,46 @@
 >
 </sbb-deeplink-teasers>
 
-<sbb-footer uselinks='false' language='de'></sbb-footer>
+<sbb-footer>
+	<sbb-footer-columns>
+		<sbb-footer-column>
+			<sbb-footer-column-title columntitle='Kontakt'></sbb-footer-column-title>
+			<sbb-footer-column-rte>
+				<p>Haben Sie Fragen? Wir helfen Ihnen gerne. Bitte lesen Sie auch unsere Erklärung zum <a href='/de/meta/legallines/datenschutz.html'>Datenschutz</a>.</p>
+			</sbb-footer-column-rte>
+		</sbb-footer-column>
+		<sbb-footer-column>
+			<sbb-footer-column-title columntitle='Bahnverkehrsinformationen'></sbb-footer-column-title>
+			<sbb-footer-column-rte>
+				<p>Informationen über die aktuelle Betriebslage und Störungen auf dem Schweizer Schienennetz und über wichtige Behinderungen und Streiks im Ausland.</p>
+			</sbb-footer-column-rte>
+		</sbb-footer-column>
+		<sbb-footer-column>
+			<sbb-footer-column-title columntitle='Newsletter & Social Media'></sbb-footer-column-title>
+			<sbb-footer-column-rte>
+				<p>Jeden Monat über Angebote und Neuigkeiten informiert sein.</p>
+			</sbb-footer-column-rte>
+			<sbb-footer-column-link-list>
+				<sbb-footer-column-link-list-item external='true' label='Facebook' href='https://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item external='true' label='Twitter' href='https://company.sbb.ch/de/immobilien.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item external='true' label='YouTube' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item external='true' label='Instagram' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item label='SBB News' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item label='SBB Community' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+			</sbb-footer-column-link-list>
+		</sbb-footer-column>
+		<sbb-footer-column>
+			<sbb-footer-column-title columntitle='Über die SBB'></sbb-footer-column-title>
+			<sbb-footer-column-link-list>
+				<sbb-footer-column-link-list-item label='Unternehmen' href='https://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item label='SBB Immobilien' href='https://company.sbb.ch/de/immobilien.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item label='SBB Cargo' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item label='Jobs & Karriere' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+				<sbb-footer-column-link-list-item label='Medien & Dossiers' href='http://company.sbb.ch/de/home.html'></sbb-footer-column-link-list-item>
+			</sbb-footer-column-link-list>
+		</sbb-footer-column>
+	</sbb-footer-columns>
+
+	<sbb-language-selector language='de'></sbb-language-selector>
+	<sbb-footer-links-bottom></sbb-footer-links-bottom>
+</sbb-footer>

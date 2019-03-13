@@ -1,0 +1,12 @@
+<sbb-timetable-results>
+
+	<sbb-timetable-result
+		 *ngFor='let result of results'
+		[attr.origin-location]='result.from.name'
+		[attr.origin-time]='result.from.time'
+		[attr.origin-track]='result.from.track'
+		[attr.destination-location]='result.to.name'
+		[attr.destination-time]='result.to.time'
+		[attr.destination-track]='result.to.track'
+	></sbb-timetable-result>
+</sbb-timetable-results>

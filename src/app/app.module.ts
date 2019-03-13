@@ -3,10 +3,14 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ResultsComponent } from './Components/TimetableResults/results.component';
+import { SearchComponent } from './Components/TimetableSearch/search.component';
 
 @NgModule({
 	declarations: [
-		AppComponent
+		AppComponent,
+		ResultsComponent,
+		SearchComponent
 	],
 	imports: [
 		BrowserModule,

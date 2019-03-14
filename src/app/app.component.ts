@@ -19,6 +19,7 @@ export class AppComponent {
 	titleTo = '';
 	CancelToken;
 	cancelRequest;
+	showLoader = false;
 
 	ngAfterViewInit() {
 		this.elementRef.nativeElement.querySelector('sbb-footer').addEventListener('sbb-language-selector_language-switch', this.changeLanguage.bind(this));
@@ -30,6 +31,7 @@ export class AppComponent {
 	}
 
 	searchCallback(from, to) {
+		this.showLoader = true;
 		this.cancelRequest && this.cancelRequest();
 
 		axios
@@ -41,14 +43,17 @@ export class AppComponent {
 			.then((res) => {
 
 				if (!res.data && !res.data.trips) {
+					this.showLoader = false;
 					return;
 				}
 
 				this.results = res.data.trips;
 				this.titleFrom = from.label;
 				this.titleTo = to.label;
+				this.showLoader = false;
 			})
 			.catch((err) => {
+				this.showLoader = false;
 				console.log('Error requesting Trips: ', err);
 			});
 	}

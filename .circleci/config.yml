@@ -26,6 +26,22 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - run:
+          command: |
+            echo 'export NVM_DIR="/opt/circleci/.nvm"' >> $BASH_ENV
+            echo ' [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
+
+      - run: |
+          node -v
+
+      - run: |
+          nvm install v10
+          node -v
+          nvm alias default v10
+
+      - run: |
+          node -v
+
       - run: npm install
 
       - save_cache:

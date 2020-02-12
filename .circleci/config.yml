@@ -3,6 +3,21 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2.1
+
+orbs:
+  heroku: circleci/heroku@0.0.10. # Invoke the Heroku orb
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build
+      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
+
 jobs:
   build:
     machine: true
@@ -42,17 +57,3 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: npm run build
-
-orbs:
-  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
-
-workflows:
-  heroku_deploy:
-    jobs:
-      - build
-      - heroku/deploy-via-git
-        requires:
-          - build # only run deploy-via-git job if the build job has completed
-        filters:
-          branches:
-            only: master # only run deploy-via-git job on master branch

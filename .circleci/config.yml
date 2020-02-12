@@ -44,7 +44,7 @@ jobs:
       - run: npm run build
 
 orbs:
-   heroku: circleci/heroku@x.y # Use the Heroku orb in your config
+  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
 
 workflows:
   heroku_deploy:

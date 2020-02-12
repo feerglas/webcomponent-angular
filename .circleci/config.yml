@@ -53,12 +53,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup Heroku
-          command: bash .circleci/setup-heroku.sh # run a script to set up Heroku
-
-      - run:
+          name: Deploy Master to Heroku
           command: |
-            git push heroku master
+            git push https://heroku:45c39641-e9fa-40a6-bb71-fd2373a0322f@git.heroku.com/webcomponent-angular.git master
             sleep 5 # sleep for 5 seconds to wait for dynos
             heroku restart
 

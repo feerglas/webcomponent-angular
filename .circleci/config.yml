@@ -26,8 +26,15 @@ jobs:
             echo ' [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"' >> $BASH_ENV
 
       - run: |
+          node -v
+
+      - run: |
           nvm install v10
+          node -v
           nvm alias default v10
+
+      - run: |
+          node -v
 
       - run: npm install
 

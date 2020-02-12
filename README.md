@@ -16,3 +16,9 @@ npm install -g angular-cli-ghpages
 `
 
 Then run ```npm run deploy```
+
+# CircleCI and Heroku
+
+## SSH
+https://gist.github.com/lauraturk/93742fd34101a0f15b988f3d3b27104d
+https://circleci.com/docs/2.0/add-ssh-key/

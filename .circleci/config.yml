@@ -6,8 +6,7 @@ version: 2.0
 
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.4-node # primary container - where job steps are run
+    machine: true
     working_directory: ~/repo
 
     steps:

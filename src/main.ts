@@ -1,6 +1,6 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { defineCustomElements } from '@stauffacher/sbbpoc/dist/loader';
+import { defineCustomElements } from 'feerglassbbpoc/dist/loader';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';

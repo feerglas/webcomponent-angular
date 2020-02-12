@@ -55,7 +55,7 @@ jobs:
       - run:
           name: Deploy Master to Heroku
           command: |
-            git push https://heroku:45c39641-e9fa-40a6-bb71-fd2373a0322f@git.heroku.com/webcomponent-angular.git master
+            git push https://heroku:$HEROKU_API_KEY/$HEROKU_APP_NAME.git master
             sleep 5 # sleep for 5 seconds to wait for dynos
             heroku restart
 

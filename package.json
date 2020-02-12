@@ -7,8 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "deploy": "ng build --prod --base-href 'https://feerglas.github.io/webcomponent-angular/' && ngh --dir=dist/webcomp-angular"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +47,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"
-  },
-  "homepage": "https://feerglas.github.io/webcomponent-angular/"
+  }
 }
